@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServletAndJSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>get</servlet-name>
+    <servlet-class>core.programs.GetHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>get</servlet-name>
+    <url-pattern>/GetHandler</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>post</servlet-name>
+    <servlet-class>core.programs.PostHandler</servlet-class>
+  </servlet>
+  <servlet>
+        <servlet-name>NameServlet</servlet-name>
+        <servlet-class>core.programs.NameServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+        <servlet-name>NameServlet</servlet-name>
+        <url-pattern>/name</url-pattern>
+   </servlet-mapping>
+  <servlet>
+    <servlet-name>InterfaceDemo</servlet-name>
+    <servlet-class>InterfaceDemo</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>InterfaceDemo</servlet-name>
+    <url-pattern>/interface</url-pattern>
+  </servlet-mapping>
+  
+    <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>core.programs.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/dashboard</url-pattern>
+    <url-pattern>/profile</url-pattern>
+  </filter-mapping>
+  
+  
+  <servlet>
+    <servlet-name>AccountDashboard</servlet-name>
+    <servlet-class>core.programs.AccountDashboard</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AccountProfile</servlet-name>
+    <servlet-class>core.programs.AccountProfile</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InfoPage</servlet-name>
+    <servlet-class>core.programs.InfoPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountDashboard</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>AccountProfile</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>InfoPage</servlet-name>
+    <url-pattern>/info</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Dashboard</servlet-name>
+    <servlet-class>Dashboard</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>Dashboard</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <servlet-name>InitHibernate</servlet-name>
+      <servlet-class>com.lesson3.InitHibernate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitHibernate</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>ListProducts</servlet-name>
+    <servlet-class>com.lesson3.ListProducts</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ListProducts</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>ListProductsAnnotation</servlet-name>
+    <servlet-class>com.lesson3.ListProductsAnnotation</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ListProductsAnnotation</servlet-name>
+    <url-pattern>/ListProductsAnnotation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProductDetails</servlet-name>
+    <servlet-class>com.lesson3.ProductDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductDetails</servlet-name>
+    <url-pattern>/details</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+        <servlet-name>eproduct</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>eproduct</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/eproduct-servlet.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+</web-app>
+</element>
